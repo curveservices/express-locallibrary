@@ -7,7 +7,7 @@ exports.author_list = asyncHandler(async (req, res, next) => {
 });
 
 // Display speecific authors
-exports.author_details = asyncHandler(async (req, res, send) => {
+exports.author_detail = asyncHandler(async (req, res, send) => {
     res.send(`NOT IMPLEMENTED: Author detail ${req.params.id}`);
 });
 

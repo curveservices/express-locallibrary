@@ -6,7 +6,7 @@ exports.genre_list = asyncHandler(async (req, res, next) => {
     res.send("NOT IMPLEMENTED: genre list");
 });
 
-exports.genre_details = asyncHandler(async (req, res, send) => {
+exports.genre_detail = asyncHandler(async (req, res, send) => {
     res.send(`NOT IMPLEMENTED: genre detail ${req.params.id}`);
 });
 
