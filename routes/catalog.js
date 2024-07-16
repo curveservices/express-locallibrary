@@ -1,45 +1,47 @@
 const express = require("express");
-const router = express.Router;
+const router = express.Router();
 
-//require controller modules.
+// Require controller modules.
 const book_controller = require("../controllers/bookController");
 const author_controller = require("../controllers/authorController");
 const genre_controller = require("../controllers/genreController");
 const book_instance_controller = require("../controllers/bookinstanceController");
 
-//Book routes.//
+/// BOOK ROUTES ///
 
-//GET catalog home page
+// GET catalog home page.
 router.get("/", book_controller.index);
 
-//GET req for creating a Book
+// GET request for creating a Book. NOTE This must come before routes that display Book (uses id).
 router.get("/book/create", book_controller.book_create_get);
 
-//POST req for creating a book
+// POST request for creating Book.
 router.post("/book/create", book_controller.book_create_post);
 
-//GET req to delete book
+// GET request to delete Book.
 router.get("/book/:id/delete", book_controller.book_delete_get);
 
-//POST req to delete book
+// POST request to delete Book.
 router.post("/book/:id/delete", book_controller.book_delete_post);
 
-//GET req to update book
+// GET request to update Book.
 router.get("/book/:id/update", book_controller.book_update_get);
 
-//POST req to update book
+// POST request to update Book.
 router.post("/book/:id/update", book_controller.book_update_post);
 
-//GET req for 1 book
+// GET request for one Book.
 router.get("/book/:id", book_controller.book_detail);
 
-//GET req for list of all book items
+// GET request for list of all Book items.
 router.get("/books", book_controller.book_list);
 
-//Author routes//
+/// AUTHOR ROUTES ///
 
+// GET request for creating Author. NOTE This must come before route for id (i.e. display author).
 router.get("/author/create", author_controller.author_create_get);
 
+// POST request for creating Author.
 router.post("/author/create", author_controller.author_create_post);
 
 // GET request to delete Author.
@@ -131,3 +133,4 @@ router.get("/bookinstance/:id", book_instance_controller.bookinstance_detail);
 router.get("/bookinstances", book_instance_controller.bookinstance_list);
 
 module.exports = router;
+
